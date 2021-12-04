@@ -1,38 +1,59 @@
+*, *::after, *::before {
+  margin: 0;
+  box-sizing: border-box;
+  --appColor: hsl(200, 50%, 50%);
+  --appColorLight: hsl(200, 50%, 85%);
+  --appColorDark: hsl(200, 50%, 25%);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-family: 'Trebuchet MS';
+  font-size: 2rem;
+  color: var(--appColor);
+  padding: 1rem;
+}
+.controls {
+  border-top: 1px solid var(--appColor);
+  padding: 1rem;
+}
+.controls > input {
+  border: 0;
+  border-radius: .5rem;
+  padding: .5rem;
+  margin: .25rem;
+  color: var(--appColorDark);
+  background-color: var(--appColorLight);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.controls > button {
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: .5rem;
+  padding: .5rem;
+  margin: .25rem;
+  color: var(--appColorLight);
+  background-color: var(--appColor);
+  transition: all .5s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.controls > button:hover,
+.controls > button:focus {
+  background-color: var(--appColorDark);
+  color: var(--appColor);
 }
 
-.App-link {
-  color: #61dafb;
+.todosList {
+  border-top: 1px solid var(--appColor);
+  padding: 1rem;
+}
+.todoLabel {
+  font-family: 'Trebuchet MS';
+  color: var(--appColor);
+  padding-left: .5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
